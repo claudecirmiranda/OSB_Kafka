@@ -167,5 +167,4 @@ Para a poc foram criados 2 projetos no OSB, um para publicar a mensagem no Kafka
 
 <h3>Recursos do projeto</h3>
 
-* Poc Kafka x OSB – https://github.com/graphql/graphiql
-
+* Poc Kafka x OSB – https://github.com/claudecirmiranda/OSB_Kafka
