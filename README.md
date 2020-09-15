@@ -8,7 +8,7 @@ Para entender melhor sobre Apache Kafka, podemos começar entendendo o fluxo bá
 * Essa mensagem é anexada em um tópico.
 * Você então consome essa mensagem.
 
-[![GraphQL Utilization](http://soaone.com.br/osb/basic_kafka_arquitecture.png "GraphQL Utilization")](http://soaone.com.br/osb/basic_kafka_arquitecture.png "Kafka Arquitetura Básica")
+[![Kafka Arquitetura Básica](http://soaone.com.br/osb/basic_kafka_arquitecture.png "Kafka Arquitetura Básica")](http://soaone.com.br/osb/basic_kafka_arquitecture.png "Kafka Arquitetura Básica")
 
 *Se você quer mover e transformar um grande volume de dados em tempo real entre diferentes sistemas, então Apache Kafka pode ser exatamente o que você precisa.*
 
@@ -37,7 +37,7 @@ Temos os tópicos, e as mensagens dentro dos tópicos. Com o Kafka Consumer é p
 O Zookeeper é um serviço centralizado para, entre outras coisas, coordenação de sistemas distribuídos. O Kafka é um sistema distribuído, e consequentemente delega diversas funções de gerenciamento e coordenação para o Zookeeper.
 
 * <h4>Kafka Brokers | Kafka Clusters</h4>
-[![GraphQL Utilization](http://soaone.com.br/osb/kafka_brooker.png "GraphQL Utilization")](http://soaone.com.br/osb/kafka_brooker.png "Kafka Brooker")
+[![Kafka Brooker](http://soaone.com.br/osb/kafka_brooker.png "Kafka Brooker")](http://soaone.com.br/osb/kafka_brooker.png "Kafka Brooker")
 
 Você pode rodar o Kafka local na sua máquina onde sua própria máquina teria um Kafka Broker formando um Kafka Cluster, como pode subir n instâncias de Kafka Brokers e todas estarem no mesmo Kafka Cluster. Com isso é possível escalar sua aplicação, e replicar os dados entre os Brokers.
 
@@ -56,7 +56,7 @@ O aplicativo web `Consumer` tem um listener Kafka que fica escutando no tópico 
 
 A integração inicia chamando uma `API REST` do OSB, que por sua vez chama a o `Consumer` do Spring Boot, publicando uma mensagem no tópico do Kafka. Um `listenter` consome a mensagem do tópico do Kafka e chama uma `API REST` do OSB que grava um registro em um banco de dados.
 
-[![GraphQL Utilization](http://soaone.com.br/osb/arquitetura_osb_kafka.png "GraphQL Utilization")](http://soaone.com.br/osb/arquitetura_osb_kafka.png "Arquitetura proposta")
+[![Arquitetura proposta](http://soaone.com.br/osb/arquitetura_osb_kafka.png "Arquitetura proposta")](http://soaone.com.br/osb/arquitetura_osb_kafka.png "Arquitetura proposta")
 
 <h3>Ambiente necessário para POC</h3>
 
@@ -94,13 +94,13 @@ Executar comando:
 
 `docker-compose -f docker-compose.yml up -d`
 
-[![GraphQL Utilization](http://soaone.com.br/osb/containers_kafka.png "Containers")](http://soaone.com.br/osb/containers_kafka.png "Containers")
+[![Containers](http://soaone.com.br/osb/containers_kafka.png "Containers")](http://soaone.com.br/osb/containers_kafka.png "Containers")
 
 <h4>Criar tópico no Kafka</h4>
 
 O próximo passo é a criação de um tópico no Apache Kafka. Para isso vamos usar o Konductor, que é uma interface gáfica amigável para criação e configuração dos tópicos.
 
-[![GraphQL Utilization](http://soaone.com.br/osb/conduktor.gif "Conduktor")](http://soaone.com.br/osb/containers_kafka.png "Conduktor")
+[![Conduktor](http://soaone.com.br/osb/conduktor.gif "Conduktor")](http://soaone.com.br/osb/containers_kafka.png "Conduktor")
 
 Com o ambiente preparado e o tópico do Kafka criado, vamos para criação dos projetos.
 
@@ -108,7 +108,7 @@ Com o ambiente preparado e o tópico do Kafka criado, vamos para criação dos p
 
 * 1 - Acessar https://start.spring.io/ criar projeto conforme imagem abaixo:
 
-[![GraphQL Utilization](http://soaone.com.br/osb/pom_producer.png "Producer")](http://soaone.com.br/osb/pom_producer.png "Arquitetura Producer")
+[![Producer](http://soaone.com.br/osb/pom_producer.png "Producer")](http://soaone.com.br/osb/pom_producer.png "Producer")
 
 * 2 - Importar projeto no Eclipse
 * 3 - criar diretório no projeto em ...src\main\webapp\WEB-INF
@@ -151,20 +151,21 @@ Quando o projeto estiver concluído deve-se gerar o .WAR pelo Maven e depois pro
 
 Siga os passos do exemplo abaixo para publicar o aplicativo no Weblogic:
 
-[![GraphQL Utilization](http://soaone.com.br/osb/implantar_war.gif "Implantar aplicativo")](http://soaone.com.br/osb/implantar_war.gif "Implantar aplicativo")
+[![Implantar aplicativo](http://soaone.com.br/osb/implantar_war.gif "Implantar aplicativo")](http://soaone.com.br/osb/implantar_war.gif "Implantar aplicativo")
  
 <h3>Projetos OSB</h3>
 
 Para a poc foram criados 2 projetos no OSB, um para publicar a mensagem no Kafka, chamando o aplicativo Spring Boot e outro para gravar os dados do documento JSON no banco de dados. Esse segundo é chamado pelo outro aplicativo Spring Boot, que fica listener na fila Kafka.
 
-[![GraphQL Utilization](http://soaone.com.br/osb/projetos_osb.png "Projetos OSB")](http://soaone.com.br/osb/projetos_osb.png "Projetos OSB")
+[![Projetos OSB](http://soaone.com.br/osb/projetos_osb.png "Projetos OSB")](http://soaone.com.br/osb/projetos_osb.png "Projetos OSB")
 
 *Os fontes dos projetos serão postados no final  desse documento.*
 
 <h3>POC em ação</h3>
 
-[![GraphQL Utilization](http://soaone.com.br/osb/osb_spring_kafka.gif "GraphQL Utilization")](http://soaone.com.br/osb/osb_spring_kafka.gif "POC em ação")
+[![POC em ação](http://soaone.com.br/osb/osb_spring_kafka.gif "Poc em ação")](http://soaone.com.br/osb/osb_spring_kafka.gif "POC em ação")
 
 <h3>Recursos do projeto</h3>
 
 * Poc Kafka x OSB – https://github.com/claudecirmiranda/OSB_Kafka
+
