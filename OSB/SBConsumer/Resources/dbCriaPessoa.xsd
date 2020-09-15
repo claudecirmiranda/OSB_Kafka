@@ -1,0 +1,11 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<xs:schema targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/dbCriaPessoa" xmlns="http://xmlns.oracle.com/pcbpel/adapter/db/dbCriaPessoa" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="dbCriaPessoaInput" type="dbCriaPessoaInput"/>
+   <xs:complexType name="dbCriaPessoaInput">
+      <xs:sequence>
+         <xs:element name="name" type="xs:string" nillable="true"/>
+         <xs:element name="country" type="xs:string" nillable="true"/>
+         <xs:element name="city" type="xs:string" nillable="true"/>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema>

@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<application xmlns:soa="http://www.oracle.com/soa/rest" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:db="http://xmlns.oracle.com/pcbpel/adapter/db/dbCriaPessoa" xmlns="http://wadl.dev.java.net/2009/02">
+   <doc title="RestCriaPessoa">RestService</doc>
+   <grammars>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/db/OSB_Kafka/SBConsumer/dbCriaPessoa" xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/" xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:db="http://xmlns.oracle.com/pcbpel/adapter/db/dbCriaPessoa" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/dbCriaPessoa" schemaLocation="dbCriaPessoa.xsd"/>
+      </schema>
+   </grammars>
+   <resources>
+      <resource path="/">
+         <method name="PUT" soa:wsdlOperation="dbCriaPessoa">
+            <request>
+               <representation mediaType="application/json" element="cns:dbCriaPessoaInput" xmlns:cns="http://xmlns.oracle.com/pcbpel/adapter/db/dbCriaPessoa"/>
+            </request>
+            <response status="202"/>
+         </method>
+      </resource>
+   </resources>
+</application>

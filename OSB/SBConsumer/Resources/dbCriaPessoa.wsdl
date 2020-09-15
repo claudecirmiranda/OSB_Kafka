@@ -1,0 +1,28 @@
+<wsdl:definitions
+     name="dbCriaPessoa"
+     targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/OSB_Kafka/SBConsumer/dbCriaPessoa"
+     xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/db/OSB_Kafka/SBConsumer/dbCriaPessoa"
+     xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/"
+     xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/"
+     xmlns:db="http://xmlns.oracle.com/pcbpel/adapter/db/dbCriaPessoa"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    >
+  <plt:partnerLinkType name="dbCriaPessoa_plt" >
+    <plt:role name="dbCriaPessoa_role" >
+      <plt:portType name="tns:dbCriaPessoa_ptt" />
+    </plt:role>
+  </plt:partnerLinkType>
+    <wsdl:types>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema" >
+        <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/dbCriaPessoa" schemaLocation="dbCriaPessoa.xsd" />
+      </schema>
+    </wsdl:types>
+    <wsdl:message name="dbCriaPessoaInput_msg">
+        <wsdl:part name="dbCriaPessoaInput_msg" element="db:dbCriaPessoaInput"/>
+    </wsdl:message>
+    <wsdl:portType name="dbCriaPessoa_ptt">
+        <wsdl:operation name="dbCriaPessoa">
+            <wsdl:input message="tns:dbCriaPessoaInput_msg"/>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>
